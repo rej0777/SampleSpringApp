@@ -72,7 +72,7 @@
 	</modules>
 	
 		<scm> 
-		<developerConnection>scm:git:https://github.com/rej0777/SpringTestWeb-WebFLUX-MVC.git</developerConnection>
+		<developerConnection>scm:git:https://github.com/rej0777/SampleSpringApp.git</developerConnection>
 	  <tag>HEAD</tag>
   </scm>
 	
