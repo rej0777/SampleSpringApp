@@ -10,8 +10,9 @@ import org.springframework.context.annotation.PropertySource;
 import pet_clinic_web.ComonUtil1;
 import pet_clinic_web.ThymeleafConfiguration;
 
+
 @EnableAutoConfiguration
-@SpringBootApplication(scanBasePackages={"pet_clinic_web" , "pet_clinic_data"})
+@SpringBootApplication(scanBasePackages={"pet_clinic_web" , "pet_clinic_data", "recipe-app"})
 @Import({ ThymeleafConfiguration.class})
 public class Aplication {
 
