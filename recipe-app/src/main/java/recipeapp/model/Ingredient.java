@@ -10,15 +10,15 @@ import jakarta.persistence.Id;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToOne;
 import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-@Getter
-@Setter
+@Data
+@EqualsAndHashCode(exclude = {"recipe"})
 @Entity
-@AllArgsConstructor
-@NoArgsConstructor
 public class Ingredient {
 	
 	  public Ingredient(String description, BigDecimal amount, UnitOfMeasure uom, Recipe recipe) {

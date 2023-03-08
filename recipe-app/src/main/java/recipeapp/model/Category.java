@@ -11,28 +11,28 @@ import jakarta.persistence.JoinTable;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToMany;
 import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-@Getter
-@Setter
+//@Getter
+//@Setter
+//@Entity
+//@AllArgsConstructor
+//@NoArgsConstructor
+@Data
+@EqualsAndHashCode(exclude = {"recipes"})
 @Entity
-@AllArgsConstructor
-@NoArgsConstructor
 public class Category {
-	
-	
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long id;
-	
-	private String description;
 
-	
-	@ManyToMany
-    @JoinTable(name = "recipe_category",
-        joinColumns = @JoinColumn(name = "recipe_id"),
-            inverseJoinColumns = @JoinColumn(name = "category_id"))
-    private Set<Category> categories;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+    private String description;
+
+    @ManyToMany(mappedBy = "categories")
+    private Set<Recipe> recipes;
+
 }

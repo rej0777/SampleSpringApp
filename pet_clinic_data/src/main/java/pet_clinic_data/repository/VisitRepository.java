@@ -1,5 +1,9 @@
 package pet_clinic_data.repository;
 
-public interface VisitRepository {
+import org.springframework.data.repository.CrudRepository;
+
+import pet_clinic_data.model.Visit;
+
+public interface VisitRepository extends CrudRepository<Visit, Long> {
 
 }
