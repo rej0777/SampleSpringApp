@@ -17,11 +17,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-//@Getter
-//@Setter
-//@Entity
-//@AllArgsConstructor
-//@NoArgsConstructor
+
 @Data
 @EqualsAndHashCode(exclude = {"recipes"})
 @Entity
