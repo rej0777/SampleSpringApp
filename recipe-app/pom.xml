@@ -1,32 +1,27 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
-  <parent>
-    <groupId>SampleSpringApp</groupId>
-    <artifactId>SampleSpringApp</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
-  </parent>
-  <artifactId>recipeapp</artifactId>
-  
-   <properties>
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>SampleSpringApp</groupId>
+		<artifactId>SampleSpringApp</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
+	</parent>
+	<artifactId>recipeapp</artifactId>
+	<properties>
 		<spring-boot.repackage.skip>true</spring-boot.repackage.skip>
 	</properties>
-  
-    <dependencies>
-	  	<dependency>
+	<dependencies>
+		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-data-jpa</artifactId>
 		</dependency>
-		
 		<dependency>
 			<groupId>com.h2database</groupId>
 			<artifactId>h2</artifactId>
 		</dependency>
-		
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter</artifactId>
-		</dependency>	
-		
+		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-thymeleaf</artifactId>
@@ -35,13 +30,31 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
-	  <!-- https://mvnrepository.com/artifact/org.springframework/spring-core<version>6.0.5</version> -->
+		<!-- https://mvnrepository.com/artifact/org.springframework/spring-core<version>6.0.5</version> -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-core</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/io.quarkus/quarkus-junit5 -->
 <dependency>
-    <groupId>org.springframework</groupId>
-    <artifactId>spring-core</artifactId>
-    
+    <groupId>io.quarkus</groupId>
+    <artifactId>quarkus-junit5</artifactId>
+    <version>3.0.0.Alpha5</version>
+    <scope>test</scope>
 </dependency>
 
-  </dependencies>
-  
+<!-- https://mvnrepository.com/artifact/org.webjars/bootstrap -->
+<dependency>
+    <groupId>org.webjars</groupId>
+    <artifactId>bootstrap</artifactId>
+    <version>5.2.3</version>
+</dependency>
+	
+	
+	</dependencies>
 </project>

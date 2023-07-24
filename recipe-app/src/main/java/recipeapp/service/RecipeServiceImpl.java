@@ -1,6 +1,7 @@
 package recipeapp.service;
 
 import java.util.HashSet;
+import java.util.Optional;
 import java.util.Set;
 
 import org.springframework.stereotype.Service;
@@ -21,13 +22,23 @@ public class RecipeServiceImpl implements RecipeService{
 	}
 
 	@Override
-	public Set<Recipe> getRecipe() {
+	public Set<Recipe> getRecipes() {
 		log.debug("funkcja web getRecipe");
 		Set<Recipe>recipeSet=new HashSet<>();
 		recipeRepository.findAll().iterator().forEachRemaining(recipeSet::add);		
 		return recipeSet;
 	}
 	
+	@Override
+	public Recipe findById(Long l) {
+		
+		Optional<Recipe> recipeOpcional = recipeRepository.findById(l);
+		
+		if (!recipeOpcional.isPresent()) {
+			throw new RuntimeException("##brak recipeOpcional");
+		}
+		return recipeOpcional.get();
+	}
 	
 
 }

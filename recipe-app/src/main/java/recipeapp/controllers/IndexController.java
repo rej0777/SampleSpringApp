@@ -36,7 +36,7 @@ private final RecipeService recipeService;
 	@GetMapping()
 	public String getIndexPage(Model model) {
 		System.out.println("##getRECIPE");
-		model.addAttribute("recipes",  recipeService.getRecipe());
+		model.addAttribute("recipes",  recipeService.getRecipes());
 	
 		return"recipe";
 		

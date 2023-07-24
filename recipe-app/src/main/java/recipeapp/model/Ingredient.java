@@ -20,6 +20,7 @@ import lombok.Setter;
 @EqualsAndHashCode(exclude = {"recipe"})
 @Entity
 public class Ingredient {
+	Ingredient(){}
 	
 	  public Ingredient(String description, BigDecimal amount, UnitOfMeasure uom, Recipe recipe) {
 	        this.description = description;

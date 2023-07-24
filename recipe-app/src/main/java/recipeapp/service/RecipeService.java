@@ -6,5 +6,7 @@ import recipeapp.model.Recipe;
 
 public interface RecipeService {
 
-	Set<Recipe> getRecipe();
+	Set<Recipe> getRecipes();
+
+	Recipe findById(Long l);
 }
