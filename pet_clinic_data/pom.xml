@@ -5,6 +5,7 @@
     <artifactId>SampleSpringApp</artifactId>
     <version>0.0.1-SNAPSHOT</version>
   </parent>
+  
   <artifactId>pet_clinic_data</artifactId>
   <name>pet_clinic_data</name>
   <description>kurs pet_clinic_web</description>
