@@ -37,12 +37,12 @@ public class SampleSimpleApplication implements CommandLineRunner {
 	// injected bean service. Also demonstrates how you can use @Value to inject
 	// command line args ('--name=whatever') or application properties
 
-	@Autowired
-	private HelloWorldService helloWorldService;
+//	@Autowired
+//	private HelloWorldService helloWorldService;
 
 	@Override
 	public void run(String... args) {
-		System.out.println(this.helloWorldService.getHelloMessage());
+//		System.out.println(this.helloWorldService.getHelloMessage());
 	}
 
 	public static void main(String[] args) throws Exception {

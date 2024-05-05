@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package spring_Testing.simple;
+package spring6andTesting;
 
 import org.junit.jupiter.api.Test;
 //import org.junit.Test;
@@ -24,13 +24,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import spring6andTesting.SampleSimpleApplication;
 
-/**
- * Tests for {@link SampleSimpleApplication}.
- * 
- * @author Dave Syer
-*/
-//@RunWith(SpringJUnit4ClassRunner.class)
-//@SpringApplicationConfiguration(classes = SampleSimpleApplication.class)
+
 public class SpringTestSampleSimpleApplicationTests {
 
 	@Test

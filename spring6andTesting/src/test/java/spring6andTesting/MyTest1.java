@@ -1,11 +1,11 @@
-package spring_Testing;
+package spring6andTesting;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
 import org.junit.jupiter.api.Test;
-import org.junit.runner.RunWith;
+//import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.context.ApplicationContext;
@@ -15,7 +15,7 @@ import spring6andTesting.SampleSimpleApplication;
 import spring6andTesting.webExample.controllers.AuthorController;
 
 
-@SpringBootTest(classes = SampleSimpleApplication.class )
+@SpringBootTest//(classes = SampleSimpleApplication.class )
 public class MyTest1 {
 
 	@Autowired
