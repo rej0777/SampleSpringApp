@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package spring_Testing.simple;
+package spring6andTesting;
 
 import org.aspectj.lang.annotation.After;
 import org.aspectj.lang.annotation.Before;
