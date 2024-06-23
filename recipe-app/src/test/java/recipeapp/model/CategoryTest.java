@@ -7,8 +7,8 @@ import org.junit.jupiter.api.Test;
 
 class CategoryTest {
 	
-	//Category category;
-Category category = new Category();
+	Category category;
+//Category category = new Category();
 
 @Before(value = "")
 	public void setUp() {
