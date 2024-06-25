@@ -3,20 +3,34 @@ package spring6andTesting.restJPA.controller;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.*;
 
+import static org.mockito.ArgumentMatchers.any;
+import static org.mockito.BDDMockito.given;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
+
 import java.util.List;
 import java.util.UUID;
 
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.HttpStatusCode;
 import org.springframework.http.ResponseEntity;
 import org.springframework.test.annotation.Rollback;
+import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.transaction.annotation.Transactional;
+
+import com.fasterxml.jackson.databind.ObjectMapper;
+
+import org.springframework.http.MediaType;
 
 import spring6andTesting.restJPA.model.BeerDTO;
 import spring6andTesting.restJPA.repositories.BeerRepository;
+import spring6andTesting.restJPA.services.BeerService;
+import spring6andTesting.restJPA.services.BeerServiceImpl;
 import spring6andTesting.restJPA.controller.BeerController;
 import spring6andTesting.restJPA.entities.Beer;
 import spring6andTesting.restJPA.mappers.BeerMapper;
@@ -33,6 +47,22 @@ class BeerControllerIT {
 	@Autowired
 	BeerMapper beerMapper;
 	
+    @Autowired
+    ObjectMapper objectMapper;
+	
+	 @MockBean
+	    BeerService beerService;
+	 
+	 @Autowired
+	    MockMvc mockMvc;
+	
+	 BeerServiceImpl beerServiceImpl; 
+	 
+	    @BeforeEach
+	    void setUp() {
+	        beerServiceImpl = new BeerServiceImpl();
+	    }
+	    
 	
 	@Test
 	void testDeleteByIdNotFound() {
@@ -118,6 +148,7 @@ class BeerControllerIT {
 		assertThat(dto).isNotNull();
 	}
 	
+	 
 	
 	@Test
 	void testListBeers() {		
