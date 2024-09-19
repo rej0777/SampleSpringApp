@@ -5,18 +5,19 @@ import java.util.Optional;
 import java.util.UUID;
 
 import spring6andTesting.restJPA.model.BeerDTO;
+import spring6andTesting.restJPA.model.BeerStyle;
 
 public interface BeerService {
 
-    List<BeerDTO> listBeers();
+    List<BeerDTO> listBeers(String beerName, BeerStyle beerStyle, Boolean showInventory);
 
-  Optional<BeerDTO> getBeerById(UUID id);
+    Optional<BeerDTO> getBeerById(UUID id);
 
-	BeerDTO saveNewBeer(BeerDTO bear);
+    BeerDTO saveNewBeer(BeerDTO beer);
 
-	Optional<BeerDTO> updateBeerById(UUID beerId, BeerDTO beer);
+    Optional<BeerDTO> updateBeerById(UUID beerId, BeerDTO beer);
 
-	Boolean deleteById(UUID beerId);
+    Boolean deleteById(UUID beerId);
 
-	void patchBeerById(UUID beerId, BeerDTO beer);
+    Optional<BeerDTO> patchBeerById(UUID beerId, BeerDTO beer);
 }

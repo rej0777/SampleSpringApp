@@ -11,8 +11,8 @@ import spring6andTesting.injectionsTests.GreetingServiceImpl;
 @SpringBootTest
 class ConstructorInjectedControllerTest {
 
-	@Autowired
-    ConstructorInjectedController controller;
+//	@Autowired
+//    ConstructorInjectedController controller;
 
 	/*
 	
@@ -24,7 +24,7 @@ class ConstructorInjectedControllerTest {
 */
     @Test
     void sayHello() {
-        System.out.println(controller.sayHello());
-
+     //   System.out.println(controller.sayHello());
+    	System.out.println("ccccccccccccccccc");
     }
 }

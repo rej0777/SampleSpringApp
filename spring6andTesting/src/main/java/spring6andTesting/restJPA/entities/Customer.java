@@ -22,29 +22,26 @@ import lombok.Setter;
 import spring6andTesting.restJPA.model.BeerStyle;
 import spring6andTesting.restJPA.model.CustomerDTO;
 
-@Entity
-//@Data
 @Getter
 @Setter
 @Builder
-
-@NoArgsConstructor
+@Entity
 @AllArgsConstructor
+@NoArgsConstructor
 public class Customer {
-
-	@Id
-	@GeneratedValue(generator = "UUID")
-	@GenericGenerator(name = "UUID", strategy = "org.hibernate.id.UUIDGenerator")
-	 @JdbcTypeCode(SqlTypes.CHAR)
-	@Column(length = 36,columnDefinition = "varchar(36)",updatable = false, nullable = false)
-	private UUID id;
-	@Version
-	private Integer version;
-	
+    @Id
+    @GeneratedValue(generator = "UUID")
+    @GenericGenerator(name = "UUID", strategy = "org.hibernate.id.UUIDGenerator")
+    @JdbcTypeCode(SqlTypes.CHAR)
+    @Column(length = 36, columnDefinition = "varchar(36)", updatable = false, nullable = false)
+    private UUID id;
     private String name;
-    private LocalDateTime createdDate;
-    private LocalDateTime updateDate;
-    
+
     @Column(length = 255)
     private String email;
+
+    @Version
+    private Integer version;
+    private LocalDateTime createdDate;
+    private LocalDateTime updateDate;
 }

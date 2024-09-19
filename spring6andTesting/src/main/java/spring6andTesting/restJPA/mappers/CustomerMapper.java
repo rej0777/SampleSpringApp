@@ -8,6 +8,6 @@ import spring6andTesting.restJPA.model.CustomerDTO;
 @Mapper
 public interface CustomerMapper {
 
-	Customer  customerDtoToCustomer(CustomerDTO dto);
-	CustomerDTO CustomerToCustomerDto(Customer customer);
+	Customer customerDtoToCustomer(CustomerDTO dto);
+	CustomerDTO customerToCustomerDto(Customer customer);
 }

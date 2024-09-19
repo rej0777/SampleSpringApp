@@ -7,33 +7,25 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
+import org.springframework.test.context.TestPropertySource;
 
 import spring6andTesting.restJPA.entities.Customer;
 
 @DataJpaTest
+@TestPropertySource("classpath:application-localmysql.properties")
 class CustomerRepositoryTest {
 
-	@Autowired
-	CustomerRepository customerRepository;
-	
-	@Test
-	void testSaveCustomer() {
-		Customer customer = customerRepository.save(Customer.builder()
-				.name("Nev Name")
-				.build());
-		
-		assertThat(customer.getId()).isNotNull();
-		
-	}
-	/*
-	
-	@BeforeEach
-	void setUp() throws Exception {
-	}
+	   @Autowired
+	    CustomerRepository customerRepository;
 
-	@Test
-	void test() {
-		fail("Not yet implemented");
-	}*/
+	    @Test
+	    void testSaveCustomer() {
+	        Customer customer = customerRepository.save(Customer.builder()
+	                        .name("New Name")
+	                .build());
+
+	        assertThat(customer.getId()).isNotNull();
+
+	    }
 
 }
