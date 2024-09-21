@@ -77,7 +77,7 @@ class BeerControllerIT {
 	    
 	    @Test
 	    void testListBeerByStyleAndNameShowInwentoryTruePage2() {
-	    	
+	    	//mockMvc.perform(null)
 	    }
 
 	    @Test
