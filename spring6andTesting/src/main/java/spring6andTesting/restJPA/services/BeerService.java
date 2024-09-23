@@ -1,15 +1,16 @@
 package spring6andTesting.restJPA.services;
 
-import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
+
+import org.springframework.data.domain.Page;
 
 import spring6andTesting.restJPA.model.BeerDTO;
 import spring6andTesting.restJPA.model.BeerStyle;
 
 public interface BeerService {
 
-    List<BeerDTO> listBeers(String beerName, BeerStyle beerStyle, Boolean showInventory);
+    Page<BeerDTO> listBeers(String beerName, BeerStyle beerStyle, Boolean showInventory, Integer pageNumber, Integer pageSize);
 
     Optional<BeerDTO> getBeerById(UUID id);
 
