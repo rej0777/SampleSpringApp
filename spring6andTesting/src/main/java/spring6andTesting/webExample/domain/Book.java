@@ -1,21 +1,39 @@
 package spring6andTesting.webExample.domain;
 
+import java.math.BigDecimal;
+import java.time.LocalDateTime;
 import java.util.HashSet;
 import java.util.Set;
+import java.util.UUID;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import spring6andTesting.restJPA.entities.Beer;
+import spring6andTesting.restJPA.entities.BeerOrderLine;
+import spring6andTesting.restJPA.model.BeerStyle;
 
 
+@Getter
+@Setter
+@Builder
 @Entity
+@NoArgsConstructor
+@AllArgsConstructor
 public class Book {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+   // @GeneratedValue(strategy = GenerationType.IDENTITY, generator = "mySeqGen")//
+  //  @SequenceGenerator(name = "mySeqGen", sequenceName = "book_seq", allocationSize = 1)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String title;
     private String isbn;
 
-    @ManyToMany()
+    @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER, targetEntity = Author.class)
     @JoinTable(
     		name = "authors", 
     		joinColumns = @JoinColumn(name = "book_id", referencedColumnName="id"),

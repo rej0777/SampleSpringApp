@@ -1,16 +1,34 @@
 package spring6andTesting.webExample.domain;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import spring6andTesting.restJPA.entities.Beer;
+import spring6andTesting.restJPA.entities.BeerOrderLine;
+import spring6andTesting.restJPA.model.BeerStyle;
 
+import java.math.BigDecimal;
+import java.time.LocalDateTime;
 import java.util.HashSet;
 import java.util.Set;
+import java.util.UUID;
 
 
+@Getter
+@Setter
+@Builder
 @Entity
+@NoArgsConstructor
+@AllArgsConstructor
 public class Publisher {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+   // @GeneratedValue(strategy = GenerationType.IDENTITY, generator = "mySeqGen")//
+  //  @SequenceGenerator(name = "mySeqGen", sequenceName = "publisher_seq", allocationSize = 1)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     private String publisherName;
