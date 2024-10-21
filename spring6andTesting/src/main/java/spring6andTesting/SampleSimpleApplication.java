@@ -16,29 +16,13 @@
 
 package spring6andTesting;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.context.annotation.ComponentScan;
-import org.springframework.context.annotation.Configuration;
 
-import spring6andTesting.simple.HelloWorldService;
-
-//@Configuration
-//@EnableAutoConfiguration
-//@ComponentScan
 
 @SpringBootApplication
 public class SampleSimpleApplication implements CommandLineRunner {
-
-	// Simple example shows how a command line spring application can execute an
-	// injected bean service. Also demonstrates how you can use @Value to inject
-	// command line args ('--name=whatever') or application properties
-
-//	@Autowired
-//	private HelloWorldService helloWorldService;
 
 	@Override
 	public void run(String... args) {
