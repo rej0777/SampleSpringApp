@@ -21,7 +21,7 @@ import java.util.UUID;
 public class BeerOrder {
 
     public BeerOrder(UUID id, Long version, Timestamp createdDate, Timestamp lastModifiedDate, String customerRef,
-			Customer customer, Set<BeerOrderLine> beerOrderLines) {
+			Customer customer, Set<BeerOrderLine> beerOrderLines, BeerOrderShipment beerOrderShipment) {
 		super();
 		this.id = id;
 		this.version = version;
@@ -30,6 +30,7 @@ public class BeerOrder {
 		this.customerRef = customerRef;
 		this.setCustomer(customer);
 		this.beerOrderLines = beerOrderLines;
+		this.beerOrderShipment = beerOrderShipment;
 	}
 	
     @Id
@@ -66,9 +67,10 @@ public class BeerOrder {
     	customer.getBeerOrders().add(this);
     }
     
-
-
 	@OneToMany(mappedBy = "beerOrder")
     private Set<BeerOrderLine> beerOrderLines;
+	
+	@OneToOne
+	private BeerOrderShipment beerOrderShipment; 
 
 }
