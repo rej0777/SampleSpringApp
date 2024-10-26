@@ -44,7 +44,7 @@ class BeerOrderRepositoryTest {
         
         BeerOrder beerOrder = BeerOrder.builder()
         		.customerRef("test order")
-        		.customer(testCustomer)
+        		.customer(testCustomer).beerOrderShipment(null)
         		.build();
         
         BeerOrder savedBeerOrders = beerOrderRepository.saveAndFlush(beerOrder);
