@@ -9,6 +9,7 @@ import org.springframework.test.context.ActiveProfiles;
 import jakarta.transaction.Transactional;
 import spring6andTesting.entities.Beer;
 import spring6andTesting.entities.BeerOrder;
+import spring6andTesting.entities.BeerOrderShipment;
 import spring6andTesting.entities.Customer;
 
 @SpringBootTest
@@ -44,7 +45,10 @@ class BeerOrderRepositoryTest {
         
         BeerOrder beerOrder = BeerOrder.builder()
         		.customerRef("test order")
-        		.customer(testCustomer).beerOrderShipment(null)
+        		.customer(testCustomer)
+        		.beerOrderShipment(BeerOrderShipment.builder()
+        				.trackingNumber("12345")
+        				.build())
         		.build();
         
         BeerOrder savedBeerOrders = beerOrderRepository.saveAndFlush(beerOrder);
